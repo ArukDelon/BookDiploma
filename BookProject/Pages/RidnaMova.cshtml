@@ -1,0 +1,89 @@
+﻿@page
+@model BookProject.Pages.RidnaMovaModel
+@{
+    ViewData["Title"] = "Рідна мова";
+}
+
+<h1 class="section-title">Рідна українська мова</h1>
+
+<div class="author-section" style="margin-bottom:50px">
+    <div class="row">
+        <div class="col-md-6" style="padding-left:30px">
+            <h2 style="margin-bottom:20px;font-style:italic;font-weight: bold;">Тара́с Григо́рович Шевче́нко</h2>
+            <p class="author-quote">"Борітеся – поборете, Вам Бог помагає! За вас правда, за вас слава І воля святая!"</p>
+            <div class="row" style="align-items:center">
+                @foreach (var book in Model.Shevchenko)
+                {
+                    <div class="col-auto">
+                        <div class="text-sm-center">
+                            <a asp-page="/Book" class="darken-on-hover position-relative" asp-route-id="@book.BookId" style="text-decoration: none">
+                                <img style="height:190px; width:130px; border-radius:14px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                                <h5>@book.Name</h5>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="~/images/shevchenko.png" alt="Тарас Шевченко" class="author-image">
+        </div>
+    </div>
+</div>
+
+
+<div class="author-section" style="margin-bottom:50px">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="~/images/ukrainka.jpg" alt="Леся Українка" class="author-image">
+        </div>
+        <div class="col-md-6" style="padding-left:30px">
+            <h2 style="margin-bottom:20px;font-style:italic;font-weight: bold;">Ле́ся Украї́нка</h2>
+            <p class="author-quote">"Адже любов, як вода, несе і крутить, грає, рве, пестить, голубить, топить. Де жар, вона кипить, а зустріне холод — і стане льодом."</p>
+            <div class="row" style="align-items:center">
+                @foreach (var book in Model.Ukrainka)
+                {
+                    <div class="col-auto">
+                        <div class="text-sm-center">
+                            <a asp-page="/Book" class="darken-on-hover position-relative" asp-route-id="@book.BookId" style="text-decoration: none">
+                                <img style="height:190px; width:130px; border-radius:14px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                                <h5>@book.Name</h5>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .author-section {
+        margin-bottom: 40px;
+    }
+
+    .author-image {
+        max-height: 350px;
+        border-radius: 10px;
+    }
+
+    .author-quote {
+        margin:30px;
+        font-style: italic;
+        color: #555;
+    }
+
+    .book-list {
+        margin-top: 10px;
+    }
+
+    .book-item {
+        margin-bottom: 5px;
+    }
+
+    .section-title {
+        text-align: center;
+        margin: 50px;
+        font-weight: bold;
+    }
+</style>

@@ -1,0 +1,95 @@
+﻿@page
+@model BookProject.Pages.AuthorModel
+@{
+    ViewData["Title"] = Model.Author.FullName;
+    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("uk-UA");
+}
+
+<div style="display: flex; flex-direction: row-reverse; align-items: start;">
+    <div>
+        <h2>@Model.Author.FullName</h2>
+        <h5 class="text-muted" style="font-style:italic">@Model.Author.FullNameEnglish</h5>
+        <div style="margin-top:10px; margin-bottom:20px">
+            <div>
+                <span style="color: grey;">Дата народження:  </span>@Model.Author.BirthDate.Day @culture.DateTimeFormat.GetMonthName(Model.Author.BirthDate.Month) @Model.Author.BirthDate.Year
+            </div>
+            <div>
+                <span style="color: grey;">Місце народження: </span>@Model.Author.BirthPlace
+            </div>
+        </div>
+        <div>
+            @Model.Author.Description
+        </div>
+    </div>
+    <span style="margin-right: 20px;">
+        <img style="height:300px; width:200px; border-radius:10px; object-fit:cover;" src="@Model.Author.AvatarPath" alt="Зображення" />
+    </span>
+</div>
+
+<hr style="margin:20px 20px 6px 20px"/>
+<h3 style="margin-left:20px">Книги автора:</h3>
+<div class="container">
+    <div class="row justify-content-start">
+        @foreach (var book in Model.Books)
+        {
+            <div class="col-auto">
+                <div class="text-sm-center">
+                    <a asp-page="/Book" class="darken-on-hover position-relative" asp-route-id="@book.BookId" style="text-decoration: none">
+                        @if (book.Language != null)
+                        {
+                            <span style="font-size:18px; color:black" class="position-absolute bottom-200 start-100 translate-middle badge bg-warning">
+                                @book.Language
+                            </span>
+                        }
+                        <img style="height:300px; width:200px; border-radius:14px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                        <div style="color:orange; text-align:start; margin-top:-30px; margin-left:8px">
+                            @if (@book.AverageGrade >= 1)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }@if (@book.AverageGrade >= 2)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                            @if (@book.AverageGrade >= 3)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                            @if (@book.AverageGrade >= 4)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                            @if (@book.AverageGrade >= 5)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                        </div>
+                        <h5>@book.Name</h5>
+                        <h6 class="text-muted">@book.Authors.FullName</h6>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

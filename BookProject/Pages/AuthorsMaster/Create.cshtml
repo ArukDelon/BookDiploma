@@ -1,0 +1,77 @@
+﻿@page
+@model BookProject.Pages.AuthorsMaster.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Додавання нового автора</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Authors.AvatarPath" />
+            <div class="form-group">
+                <label asp-for="Authors.FullName" class="control-label"></label>
+                <input asp-for="Authors.FullName" class="form-control" />
+                <span asp-validation-for="Authors.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authors.FullNameEnglish" class="control-label"></label>
+                <input asp-for="Authors.FullNameEnglish" class="form-control" />
+                <span asp-validation-for="Authors.FullNameEnglish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authors.BirthDate" class="control-label"></label>
+                <input asp-for="Authors.BirthDate" class="form-control" />
+                <span asp-validation-for="Authors.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authors.BirthPlace" class="control-label"></label>
+                <input asp-for="Authors.BirthPlace" class="form-control" />
+                <span asp-validation-for="Authors.BirthPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authors.Description" class="control-label"></label>
+                <textarea style="min-width:600px; min-height:300px" asp-for="Authors.Description" class="form-control"></textarea>
+                <span asp-validation-for="Authors.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authors.Avatar" class="control-label"></label>
+                <input type="file" asp-for="Authors.Avatar" class="form-control" id="avatarInput" onchange="updateAvatarPath(this)" />
+                <span asp-validation-for="Authors.Avatar" class="text-danger"></span>
+            </div>
+            <div style="margin-top:20px" class="form-group">
+                <input type="submit" value="Створити" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+
+<div>
+    <a class="btn btn-secondary" asp-page="Index"> <i class="fa-solid fa-arrow-left"></i> Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    function updateAvatarPath(input) {
+        // Отримати вибраний файл
+        var file = input.files[0];
+
+        // Перевірити, чи файл вибрано
+        if (file) {
+            // Отримати шлях до вибраного файлу та встановити його як значення поля AvatarPath
+            document.getElementById("AvatarPath").value = file.name;
+        } else {
+            // Якщо файл не вибрано, очистити значення поля AvatarPath
+            document.getElementById("AvatarPath").value = "";
+        }
+    }
+</script>

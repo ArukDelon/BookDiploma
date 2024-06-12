@@ -1,0 +1,350 @@
+﻿@page
+@model BookProject.Pages.AdvancedSearchModel
+@{
+    ViewData["Title"] = "Розширений пошук";
+}
+
+<aside>
+    <div style="border-bottom: 1px solid #000; border-color:gray">
+        <button onclick="toggleTags()" class="btn btn-link" style="text-align:start; min-width:100%; text-decoration:none">
+            Теги книг  
+            <span class="text-muted">@Model.TotalTags</span>
+            <span id="arrowIcon" style="float:right;">▼</span>
+        </button>
+        <div class="row" id="tagList" style="margin-left:4px; padding-right:10px">
+            @foreach (var tag in ViewBag.BookTags)
+            {
+                <a class="col-auto ca tag-link" data-tag-id="@tag.Value"
+                   style="background-color: @(Model.SelectedTags.ToList().Contains(Convert.ToInt32(tag.Value)) ? "lightgray" : "transparent")">@tag.Text
+                </a>
+            }
+        </div>
+    </div>
+    <div style="border-bottom: 1px solid #000; border-color:gray;">
+        <button onclick="togglePrice()" class="btn btn-link" style="text-align:start; min-width:100%; text-decoration:none">
+            Ціна
+            <span id="arrowIcon2" style="float:right;">▼</span>
+        </button>
+        <div class="row" id="price" style="margin-left:4px; margin-bottom:20px">
+            <div class="col-4">
+                <input id="minPrice" class="form-control" type="number" value="@Model.MinPrice" placeholder="Мінімальна ціна">
+            </div>
+            <div class="col-4">
+                <input id="maxPrice" class="form-control" type="number" value="@Model.MaxPrice" placeholder="Максимальна ціна">
+            </div>
+            <div class="col-auto">
+                <button onclick="filterByPrice()" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<div class="row mb-3" style="margin-bottom:20px; margin-right:30px">
+    <div class="col">
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button onclick="ListView()" class="btn btn-outline-dark square-btn">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+            </div>
+            <div class="col-auto" style="margin-left:-15px">
+                <button onclick="GridView()" class="btn btn-outline-dark square-btn">
+                    <i class="fa-solid fa-grip"></i>
+                </button>
+            </div>
+            <div class="form-group" style="width: fit-content;">
+                <select id="sortOrder" class="form-control" onchange="sortBooks()">
+                    @if (ViewBag.SortOrder == "name")
+                    {
+                        <option selected value="name">Назвою</option>
+                    }
+                    else
+                    {
+                        <option value="name">Назвою</option>
+                    }
+                    @if (ViewBag.SortOrder == "views")
+                    {
+                        <option selected value="views">Кількістю переглядів</option>
+                    }
+                    else
+                    {
+                        <option value="views">Кількістю переглядів</option>
+                    }
+                    @if (ViewBag.SortOrder == "date")
+                    {
+                        <option selected value="date">Датою створення</option>
+                    }
+                    else
+                    {
+                        <option value="date">Датою створення</option>
+                    }
+                    @if (ViewBag.SortOrder == "uploaddate")
+                    {
+                        <option selected value="uploaddate">Датою публікації</option>
+                    }
+                    else
+                    {
+                        <option value="uploaddate">Датою публікації</option>
+                    }
+                    @if (ViewBag.SortOrder == "rating")
+                    {
+                        <option selected value="rating">Рейтингом</option>
+                    }
+                    else
+                    {
+                        <option value="rating">Рейтингом</option>
+                    }
+                    @if (ViewBag.SortOrder == "comments")
+                    {
+                        <option selected value="comments">Кількість коментарів</option>
+                    }
+                    else
+                    {
+                        <option value="comments">Кількість коментарів</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="container col-auto">
+        @if (Model.ContentView != null)
+        {
+            @foreach (var book in Model.Books)
+            {
+                <div class="row">
+                    <div class="col-auto">
+                        <img style="height:120px; width:80px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                    </div>
+                    <div class="col-auto">
+                        <h2 style="word-wrap: normal; max-width:200px">@book.Name</h2>
+                        <a asp-page="/Author" asp-route-id="@book.AuthorsId" style="text-decoration: none">
+                            <h5 class="text-muted" style="font-style:italic; text-decoration: none">@book.Authors.FullName</h5>
+                        </a>
+                        <span>Категорія: <a asp-page="/Category" asp-route-id="@book.CategoryId">
+                                @book.Category.Name</a>
+                        </span>
+                    </div>
+                    <div class="col align-content-center">
+                        <blockquote class="font-weight-light quote">
+                           @book.Body.Substring(0,140)...
+                        </blockquote>
+                    </div>
+                    <div class="col-md-auto text-end">
+                        <h5><i style="color:orange" class="fas fa-star"></i> @book.AverageGrade.ToString("N1") / 5</h5>
+                        <h5><i style="color:gray" class="fas fa-eye"></i> @book.ViewCount</h5>
+                        <a asp-page="/Book" asp-route-id="@book.BookId" class="btn btn-dark " style="margin-top:4px">
+                            <i class="fa-solid fa-chevron-right"></i>  ДЕТАЛЬНІШЕ
+                        </a>
+                    </div>
+                </div>
+                <hr />
+            }
+            @if (Model.Books.Count == 0)
+            {
+                <div class="col" style="text-align:center">
+                    <img class="fit-picture" style="height:200px" src="~/images/not-found.png" />
+                    <h4>Нічого не знайдено</h4>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="row justify-content-start">
+                @foreach (var book in Model.Books)
+                {
+                    <div class="col-md" style="width: 200px; min-width:200px; max-width:200px">
+                        <div>
+                            <div class="text-sm-center">
+                                <a class="darken-on-hover position-relative" asp-page="/Book" asp-route-id="@book.BookId" style="text-decoration: none">
+                                    <img style="height:260px; width:100%; border-radius:14px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                                    <div class="bookcard" style="color:orange; margin-top:-30px; margin-left:8px">
+                                        @if (@book.AverageGrade >= 1)
+                                        {
+                                            <i class="ratingStar fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="ratingStar far fa-star"></i>
+                                        }@if (@book.AverageGrade >= 2)
+                                        {
+                                            <i class="ratingStar fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="ratingStar far fa-star"></i>
+                                        }
+                                        @if (@book.AverageGrade >= 3)
+                                        {
+                                            <i class="ratingStar fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="ratingStar far fa-star"></i>
+                                        }
+                                        @if (@book.AverageGrade >= 4)
+                                        {
+                                            <i class="ratingStar fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="ratingStar far fa-star"></i>
+                                        }
+                                        @if (@book.AverageGrade >= 5)
+                                        {
+                                            <i class="ratingStar fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="ratingStar far fa-star"></i>
+                                        }
+                                    </div>
+                                    <h5>@book.Name</h5>
+                                    <h6 class="text-muted">@book.Authors.FullName</h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (Model.Books.Count == 0)
+                {
+                    <div class="col" style="text-align:center">
+                        <img class="fit-picture" style="height:200px" src="~/images/not-found.png" />
+                        <h4>Нічого не знайдено</h4>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+
+
+<script>
+    var isTagsOpen = true; // Прапорець для відстеження стану списку тегів
+
+    function toggleTags() {
+        var tagList = document.getElementById("tagList");
+        var arrowIcon = document.getElementById("arrowIcon");
+
+        if (!isTagsOpen) {
+            tagList.classList.remove("d-none");
+            arrowIcon.innerHTML = "▲"; // Змінюємо стрілку на "вгору"
+        } else {
+            tagList.classList.add("d-none");
+            arrowIcon.innerHTML = "▼"; // Змінюємо стрілку на "вниз"
+        }
+        isTagsOpen = !isTagsOpen; // Змінюємо стан прапорця
+    }
+
+    var isPriceOpen = true; // Прапорець для відстеження стану списку тегів
+
+    function togglePrice() {
+        var priceList = document.getElementById("price");
+        var arrowIcon = document.getElementById("arrowIcon2");
+
+        if (!isPriceOpen) {
+            priceList.classList.remove("d-none");
+            arrowIcon.innerHTML = "▲"; // Змінюємо стрілку на "вгору"
+        } else {
+            priceList.classList.add("d-none");
+            arrowIcon.innerHTML = "▼"; // Змінюємо стрілку на "вниз"
+        }
+        isPriceOpen = !isPriceOpen; // Змінюємо стан прапорця
+    }
+
+    function sortBooks() {
+        var sortOrder = document.getElementById("sortOrder").value;
+        var currentUrl = new URL(window.location.href);
+
+
+        currentUrl.searchParams.delete('sortOrder');
+
+        currentUrl.searchParams.append('sortOrder', sortOrder);
+
+        window.location.href = currentUrl.toString();
+    }
+
+    function GridView() {
+        var currentUrl = new URL(window.location.href);
+
+        var listView = currentUrl.searchParams.getAll("view");
+
+        if (listView.includes("list")) {
+            currentUrl.searchParams.delete('view');
+        }
+
+        window.location.href = currentUrl.toString();
+    }
+
+    function ListView() {
+        var currentUrl = new URL(window.location.href);
+
+        var listView = currentUrl.searchParams.getAll("view");
+
+        if (listView.includes("list")) {
+            currentUrl.searchParams.delete('view');
+        } 
+
+        currentUrl.searchParams.set('view', "list");
+
+        window.location.href = currentUrl.toString();
+    }
+
+    function filterByPrice() {
+        var minPrice = document.getElementById("minPrice").value;
+        var maxPrice = document.getElementById("maxPrice").value;
+        var currentUrl = new URL(window.location.href);
+
+        if (minPrice) {
+            currentUrl.searchParams.set('minPrice', minPrice);
+        } else {
+            currentUrl.searchParams.delete('minPrice');
+        }
+
+        if (maxPrice) {
+            currentUrl.searchParams.set('maxPrice', maxPrice);
+        } else {
+            currentUrl.searchParams.delete('maxPrice');
+        }
+
+        window.location.href = currentUrl.toString();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Отримуємо всі теги
+        var tagLinks = document.querySelectorAll('.tag-link');
+        var sortOrder = document.getElementById("sortOrder").value;
+        // Додаємо обробник кліків на кожний тег
+        tagLinks.forEach(function (tagLink) {
+            tagLink.addEventListener('click', function () {
+                var tagId = this.getAttribute('data-tag-id'); // Отримуємо ідентифікатор тега
+
+                // Перевіряємо, чи вже є тег в URL
+                var currentUrl = new URL(window.location.href);
+                var tagIds = currentUrl.searchParams.getAll('tagId');
+
+                // Додаємо або видаляємо тег з URL-адреси в залежності від того, чи він вже присутній
+                if (tagIds.includes(tagId)) {
+                    tagIds = tagIds.filter(id => id !== tagId);
+                } else {
+                    tagIds.push(tagId);
+                }
+
+                // Оновлюємо URL з вибраними тегами
+                currentUrl.searchParams.delete('tagId');
+                tagIds.forEach(id => currentUrl.searchParams.append('tagId', id));
+
+                // Перенаправляємо на сторінку з параметрами тегів
+                window.location.href = currentUrl.toString();
+            });
+        });
+    });
+</script>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+

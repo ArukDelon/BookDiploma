@@ -1,0 +1,561 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\BookProject.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BookProject.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\book-stack-64.ico",
+      "PackagePath": "staticwebassets\\book-stack-64.ico"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\bookfiles\\2ec8f351-8c1e-4ff0-92f4-d1005f27b2bf.txt",
+      "PackagePath": "staticwebassets\\bookfiles\\2ec8f351-8c1e-4ff0-92f4-d1005f27b2bf.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\bookfiles\\3714d4a3-873b-4ec8-85ab-2e0739ab8073.txt",
+      "PackagePath": "staticwebassets\\bookfiles\\3714d4a3-873b-4ec8-85ab-2e0739ab8073.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\bookfiles\\57202975-6f0e-41de-9ca2-616a3b77cdfd.txt",
+      "PackagePath": "staticwebassets\\bookfiles\\57202975-6f0e-41de-9ca2-616a3b77cdfd.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\bookfiles\\7c05e664-a1ab-4a14-bd1e-a4f95dda6f60.txt",
+      "PackagePath": "staticwebassets\\bookfiles\\7c05e664-a1ab-4a14-bd1e-a4f95dda6f60.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\bookfiles\\916235a6-4dea-43f1-8879-ca538a93bde5.txt",
+      "PackagePath": "staticwebassets\\bookfiles\\916235a6-4dea-43f1-8879-ca538a93bde5.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\bookfiles\\d15a23bc-9b90-495e-9e6d-5daab6b904b4.txt",
+      "PackagePath": "staticwebassets\\bookfiles\\d15a23bc-9b90-495e-9e6d-5daab6b904b4.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\fonts\\Academy.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Academy.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\fonts\\Adana_script_Deco.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Adana_script_Deco.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\fonts\\Adventure.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Adventure.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\Archive_1.png",
+      "PackagePath": "staticwebassets\\images\\Archive_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\Books_1.jpg",
+      "PackagePath": "staticwebassets\\images\\Books_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\Kobzar.jpg",
+      "PackagePath": "staticwebassets\\images\\Kobzar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\Kobzar.png",
+      "PackagePath": "staticwebassets\\images\\Kobzar.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\Library_1.png",
+      "PackagePath": "staticwebassets\\images\\Library_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\NotFound.png",
+      "PackagePath": "staticwebassets\\images\\NotFound.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\background.png",
+      "PackagePath": "staticwebassets\\images\\background.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\not-found.png",
+      "PackagePath": "staticwebassets\\images\\not-found.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\shevchenko.png",
+      "PackagePath": "staticwebassets\\images\\shevchenko.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\ukrainka.jpg",
+      "PackagePath": "staticwebassets\\images\\ukrainka.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\images\\user.png",
+      "PackagePath": "staticwebassets\\images\\user.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\all.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\brands.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\brands.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\brands.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\regular.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\regular.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\regular.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\solid.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\solid.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\solid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-font-face.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-font-face.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-shims.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v5-font-face.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v5-font-face.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\all.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\all.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\all.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\brands.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\brands.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\brands.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\brands.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\conflict-detection.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\conflict-detection.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\fontawesome.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\fontawesome.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\fontawesome.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\fontawesome.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\regular.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\regular.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\regular.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\regular.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\solid.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\solid.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\solid.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\solid.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\v4-shims.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\v4-shims.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\js\\v4-shims.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\v4-shims.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\sprites\\brands.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\brands.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\sprites\\regular.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\regular.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\sprites\\solid.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\solid.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\1de42301-a321-454b-ad47-160db71f9b43.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1de42301-a321-454b-ad47-160db71f9b43.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\422cb845-2d84-4bd3-b095-abc3a229015d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\422cb845-2d84-4bd3-b095-abc3a229015d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\4903bcc1-33f3-41bf-bba2-0a1d5e9f4e33.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4903bcc1-33f3-41bf-bba2-0a1d5e9f4e33.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\55d33c0a-a38f-4581-bb14-162540ea4ba4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\55d33c0a-a38f-4581-bb14-162540ea4ba4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\739b02c7-e19e-4a77-986a-4eb2b059a9ab.jpg",
+      "PackagePath": "staticwebassets\\uploads\\739b02c7-e19e-4a77-986a-4eb2b059a9ab.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\8cbf7a71-5b1e-4416-b286-fb115d124ec4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8cbf7a71-5b1e-4416-b286-fb115d124ec4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\c05ffb6a-21b6-40be-a2fd-7164c2522984.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c05ffb6a-21b6-40be-a2fd-7164c2522984.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\c4c98f65-7b90-4ef2-b6c3-9f3038a8acfa.png",
+      "PackagePath": "staticwebassets\\uploads\\c4c98f65-7b90-4ef2-b6c3-9f3038a8acfa.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\d5585a81-5eaa-4ff4-95b8-2383027f3352.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d5585a81-5eaa-4ff4-95b8-2383027f3352.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\BookProject\\BookProject\\wwwroot\\uploads\\e8c617b9-e642-41c3-9e81-835e762621ce.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e8c617b9-e642-41c3-9e81-835e762621ce.jpg"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.BookProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.BookProject.props",
+      "PackagePath": "build\\BookProject.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BookProject.props",
+      "PackagePath": "buildMultiTargeting\\BookProject.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.BookProject.props",
+      "PackagePath": "buildTransitive\\BookProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

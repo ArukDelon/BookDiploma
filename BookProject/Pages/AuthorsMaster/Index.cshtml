@@ -1,0 +1,88 @@
+﻿@page
+@model BookProject.Pages.AuthorsMaster.IndexModel
+
+@{
+    ViewData["Title"] = "Автори";
+}
+
+<h1 class="fw-bold">Автори</h1>
+
+<hr />
+<p>
+    <a class="btn btn-primary" asp-page="Create"><i class="fa-solid fa-plus"></i> Додати новий</a> |
+    <a class="btn btn-secondary" asp-page="/Admin"><i class="fa-solid fa-arrow-left"></i> Дашборд</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors[0].FullNameEnglish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors[0].BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors[0].BirthPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors[0].AvatarPath)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Authors) {
+            var trimDesc = item.Description.Length > 160 ? item.Description.Substring(0, 160) + "..." : item.Description;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullNameEnglish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => trimDesc)
+            </td>
+            <td>
+                <img  style="max-height:200px; max-width:200px" src="@item.AvatarPath" alt="Зображення" />
+            </td>
+            <td width="200px">
+                <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
+                <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.Authors.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Authors.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Authors.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Authors.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
+

@@ -1,0 +1,131 @@
+﻿@page
+@model BookProject.Pages.BookMaster.EditModel
+
+@{
+    ViewData["Title"] = "Редагування";
+}
+
+<h1>Редагування</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Book.BookId" />
+            <input type="hidden" asp-for="Book.ViewCount" />
+            <input type="hidden" asp-for="Book.AverageGrade" />
+            <input type="hidden" asp-for="Book.TotalGrades" />
+            <div class="form-group">
+                <label asp-for="Book.Name" class="control-label"></label>
+                <input asp-for="Book.Name" class="form-control" />
+                <span asp-validation-for="Book.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Description" class="control-label"></label>
+                <input asp-for="Book.Description" class="form-control" />
+                <span asp-validation-for="Book.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Price" class="control-label"></label>
+                <input asp-for="Book.Price" class="form-control" />
+                <span asp-validation-for="Book.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.CategoryId" class="control-label"></label>
+                <select asp-for="Book.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="Book.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.AuthorsId" class="control-label"></label>
+                <select asp-for="Book.AuthorsId" class="form-control" asp-items="ViewBag.AuthorsId"></select>
+                <span asp-validation-for="Book.AuthorsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.BookSeriesId" class="control-label"></label>
+                <select asp-for="Book.BookSeriesId" class="form-control" asp-items="ViewBag.BookSeriesId"></select>
+                <span asp-validation-for="Book.BookSeriesId" class="text-danger"></span>
+            </div>
+            @if (Model.Book.BookSeriesId != null || Model.Book.BookSeriesId !=0)
+            {
+                <div class="form-group">
+                    <label asp-for="Book.BookNumInSeries" class="control-label"></label>
+                    <input asp-for="Book.BookNumInSeries" class="form-control"/>
+                    <span asp-validation-for="Book.BookNumInSeries" class="text-danger"></span>
+                </div>
+            }
+            <div class="form-group">
+                <label asp-for="Book.Body" class="control-label"></label>
+                <input asp-for="Book.Body" class="form-control" />
+                <span asp-validation-for="Book.Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Language" class="control-label"></label>
+                <input asp-for="Book.Language" class="form-control" />
+                <span asp-validation-for="Book.Language" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Book.IsAvailable" /> @Html.DisplayNameFor(model => model.Book.IsAvailable)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Created" class="control-label"></label>
+                <input asp-for="Book.Created" class="form-control" />
+                <span asp-validation-for="Book.Created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Uploaded" class="control-label"></label>
+                <input asp-for="Book.Uploaded" class="form-control" />
+                <span asp-validation-for="Book.Uploaded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="Book.AvatarPath" class="control-label"></label>
+                <input hidden asp-for="Book.AvatarPath" class="form-control" />
+                <span hidden asp-validation-for="Book.AvatarPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.Avatar" class="control-label"></label>
+                <input type="file" asp-for="Book.Avatar" class="form-control" id="avatarInput" />
+                <span asp-validation-for="Book.Avatar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="Book.BookFilePath" class="control-label"></label>
+                <input hidden asp-for="Book.BookFilePath" class="form-control" />
+                <span hidden asp-validation-for="Book.BookFilePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Book.BookFile" class="control-label"></label>
+                <input type ="file" asp-for="Book.BookFile" class="form-control" />
+                <span asp-validation-for="Book.BookFile" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top:20px">
+                <label for="tags">Теги:</label>
+                <hr />
+                @foreach (var tag in ViewBag.SelectedTags)
+                {
+                    var tagValue = Convert.ToInt32(tag.Value);
+                    var isChecked = Model.SelectedTags != null && Model.SelectedTags.Contains(tagValue);
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="@($"tag-{tag.Value}")" name="selectedTags" value="@tag.Value" @(isChecked ? "checked" : "")>
+                        <label class="form-check-label" for="@($"tag-{tag.Value}")">@tag.Text</label>
+                    </div>
+                }
+            </div>
+            <div style="margin-top:20px" class="form-group">
+                <input type="submit" value="Зберегти" class="btn btn-primary" />
+            </div>
+        </form>
+        </div>
+    </div>
+<hr />
+
+<div>
+    <a class="btn btn-secondary" asp-page="./Index"><i class="fa-solid fa-arrow-left"></i> Назад</a>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

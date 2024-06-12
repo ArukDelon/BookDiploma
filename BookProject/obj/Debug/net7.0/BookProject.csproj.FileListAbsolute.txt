@@ -1,0 +1,8 @@
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.AssemblyInfo.cs
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.RazorAssemblyInfo.cache
+C:\Users\Asus\source\repos\BookProject\BookProject\obj\Debug\net7.0\BookProject.RazorAssemblyInfo.cs

@@ -1,0 +1,37 @@
+﻿@page
+@model BookProject.Pages.AuthorsModel
+@{
+    ViewData["Title"] = "Автори";
+}
+
+<form asp-page="/Authors" method="get">
+    <div class="input-group mb-3">
+        <input type="text" name="SearchString" class="form-control" placeholder="Пошук..." aria-label="Search for authors" aria-describedby="search-button" value="@Model.CurrentFilter">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" id="search-button">Шукати</button>
+        </div>
+    </div>
+</form>
+
+<h2>Список авторів:</h2>
+
+<hr />
+<div class="container">
+    <div class="row justify-content-start">
+        @foreach (var author in Model.Authors)
+        {
+            <div class="col-auto">
+                <div class="text-sm-center">
+                    <a asp-page="/Author" asp-route-id="@author.Id" style="text-decoration: none;">
+                        <img class="darken-on-hover iconsize" style="border-radius:50%; object-fit:cover;" src="@author.AvatarPath" alt="Зображення" />
+                        <h5 class="text-muted">@author.FullName</h5>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+

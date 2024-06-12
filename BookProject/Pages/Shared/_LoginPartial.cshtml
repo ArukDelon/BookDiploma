@@ -1,0 +1,46 @@
+﻿@using BookProject.Services
+@using Microsoft.AspNetCore.Identity
+@using BookProject.Models
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<ul class="navbar-nav">
+
+    <li class="nav-item" style="margin-left:14px">
+        @{
+            var cartService = Context.RequestServices.GetRequiredService<CartService>();
+            var cartItemCount = cartService.GetCartItemCount();
+        }
+        <a class="nav-link text-light position-relative" asp-area="" asp-page="/Cart">
+            <i class="fa-solid fa-shopping-cart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                @cartItemCount
+                <span class="visually-hidden">unread messages</span>
+            </span>
+        </a>
+    </li>
+@if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item dropdown" style="margin-left:14px">
+            <button class="btn text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i style="width:max-content" class="fa-solid fa-user"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index"><i class="fa-solid fa-gear"></i>  Налаштування</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"><i class="fa-solid fa-right-from-bracket"></i>  Вийти</a></li>
+            </ul>
+        </li>
+
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-light" id="register" asp-area="Identity" asp-page="/Account/Register">Реєстрація</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" id="login" asp-area="Identity" asp-page="/Account/Login">Вхід</a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,76 @@
+﻿@page
+@model BookProject.Pages.CartModel
+@{
+    ViewData["Title"] = "Корзина";
+}
+
+<section class="payment-form dark">
+    <div class="container">
+        <div class="block-heading">
+            <h2>Оплата</h2>
+        </div>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="products">
+                <h3 class="title">Корзина</h3>
+                @foreach (var item in Model.ShoppingCart.Items)
+                {
+                    <div class="item">
+                        @if (item.Quantity > 1)
+                        {
+                            <span class="price">@item.Quantity * @item.Book.Price.ToString("N2") грн</span>
+                        }
+                        else
+                        {
+                            <span class="price">@item.Book.Price.ToString("N2") грн</span>
+                        }
+                        <p class="item-name">@item.Book.Name</p>
+                        <p class="item-description">@item.Book.Authors.FullName</p>
+                    </div>
+                }
+                <div class="total">Сума<span class="price">@Model.ShoppingCart.GetTotal().ToString("N2") грн</span></div>
+            </div>
+            <div class="card-details">
+                <h3 class="title">Дані картки</h3>
+                <div class="row">
+                    <div class="form-group col-sm-7">
+                        <input type="hidden" id="ShoppingCart" name="ShoppingCartJson" value="@ViewData["ShoppingCartJson"]" /> 
+                        <label for="card-holder">Власник картки</label>
+                        <input id="card-holder" asp-for="Payment.CardHolder" type="text" class="form-control" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1">
+                        <span hidden asp-validation-for="Payment.CardHolder" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="expiration-date">Термін придатності</label>
+                        <div class="input-group expiration-date">
+                            <input id="expiration-month" asp-for="ExpirationMonth" type="text" class="form-control" placeholder="MM" aria-label="MM" aria-describedby="basic-addon1">
+                            <span hidden asp-validation-for="ExpirationMonth" class="text-danger"></span>
+                            <span style="font-size:20px; margin-left:10px" class="date-separator">/</span>
+                            <input id="expiration-year" asp-for="ExpirationYear" type="text" class="form-control" placeholder="YY" aria-label="YY" aria-describedby="basic-addon1">
+                            <span hidden asp-validation-for="ExpirationYear" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-8">
+                        <label for="card-number">Номер картки</label>
+                        <input id="card-number" asp-for="Payment.CardNumber" type="text" class="form-control" placeholder="Card Number" aria-label="Card Number" aria-describedby="basic-addon1">
+                        <span hidden asp-validation-for="Payment.CardNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="cvc">CVC</label>
+                        <input id="cvc" asp-for="Payment.CVC" type="text" class="form-control" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1">
+                        <span hidden asp-validation-for="Payment.CVC" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col">
+                        <button type="submit" style="width:100%" class="btn btn-primary">Продовжити оплату</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

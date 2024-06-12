@@ -1,0 +1,141 @@
+﻿@page
+@model BookProject.Pages.CategoryModel
+@{
+    ViewData["Title"] = Model.Category.Name;
+    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("uk-UA");
+}
+
+
+<h2 class="text-center"> 
+    @if(Model.Category.FaIcon != null)
+    {
+        <i class="fa-solid @Model.Category.FaIcon"></i>
+    }<strong>@Model.Category.Name</strong>
+</h2>
+
+
+
+
+<div class="container">
+    <div class="row justify-content-end" style="margin:30px">
+        <div class="form-group" style="width: fit-content;">
+            <select id="sortOrder" class="form-control" onchange="sortBooks()">
+                @if (ViewBag.SortOrder == "name")
+                {
+                    <option selected value="name">Назвою</option>
+                }
+                else
+                {
+                    <option value="name">Назвою</option>
+                }
+                @if (ViewBag.SortOrder == "date")
+                {
+                    <option selected value="date">Датою створення</option>
+                }
+                else
+                {
+                    <option value="date">Датою створення</option>
+                }
+                @if (ViewBag.SortOrder == "uploaddate")
+                {
+                    <option selected value="uploaddate">Датою публікації на сайті</option>
+                }
+                else
+                {
+                    <option value="uploaddate">Датою публікації на сайті</option>
+                }
+                @if (ViewBag.SortOrder == "rating")
+                {
+                    <option selected value="rating">Рейтингом</option>
+                }
+                else
+                {
+                    <option value="rating">Рейтингом</option>
+                }
+                @if (ViewBag.SortOrder == "comments")
+                {
+                    <option selected value="comments">Кількість коментарів</option>
+                }
+                else
+                {
+                    <option value="comments">Кількість коментарів</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="row justify-content-start">
+        @foreach (var book in Model.Books)
+        {
+            <div class="col-auto">
+                <div class="text-sm-center">
+                    <a asp-page="/Book" class="darken-on-hover position-relative" asp-route-id="@book.BookId" style="text-decoration: none">
+                        @if(book.Language != null)
+                        {
+                            <span style="font-size:18px; color:black" class="position-absolute bottom-200 start-100 translate-middle badge bg-warning">
+                                @book.Language
+                            </span>
+                        }
+                        <img style="height:300px; width:200px; border-radius:14px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                        <div style="color:orange; text-align:start; margin-top:-30px; margin-left:8px">
+                            @if (@book.AverageGrade >= 1)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }@if (@book.AverageGrade >= 2)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                            @if (@book.AverageGrade >= 3)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                            @if (@book.AverageGrade >= 4)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                            @if (@book.AverageGrade >= 5)
+                            {
+                                <i class="ratingStar fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="ratingStar far fa-star"></i>
+                            }
+                        </div>
+                        <h5>@book.Name</h5>
+                        <h6 class="text-muted">@book.Authors.FullName</h6>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    function sortBooks() {
+        var sortOrder = document.getElementById("sortOrder").value;
+        var currentUrl = new URL(window.location.href);
+
+
+        currentUrl.searchParams.delete('sortOrder');
+
+        currentUrl.searchParams.append('sortOrder', sortOrder);
+
+        window.location.href = currentUrl.toString();
+    }
+</script>

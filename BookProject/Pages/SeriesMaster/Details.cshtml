@@ -1,0 +1,31 @@
+﻿@page
+@model BookProject.Pages.SeriesMaster.DetailsModel
+
+@{
+    ViewData["Title"] = "Деталі";
+}
+
+<h1>Деталі</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookSeries.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookSeries.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookSeries.Authors)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookSeries.Authors.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.BookSeries.Id"><i class="fa-solid fa-pen-to-square"></i> Редагувати</a> |
+    <a class="btn btn-secondary" asp-page="./Index"><i class="fa-solid fa-arrow-left"></i> Назад</a>
+</div>
+

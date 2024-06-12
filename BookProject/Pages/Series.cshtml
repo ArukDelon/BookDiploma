@@ -1,0 +1,56 @@
+﻿@page
+@using BookProject.Models
+@model BookProject.Pages.SeriesModel
+@{
+    ViewData["Title"] = Model.Series.Name;
+    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("uk-UA");
+}
+
+<h1>@Model.Series.Name</h1>
+
+<h3>Вміст серії:</h3>
+
+<ul class="level-1">
+    <li>@Model.Series.Name</li>
+    <li style="list-style-type: none">
+        <ul class="level-2">
+            @foreach(Book book in Model.Series.Books)
+            {
+                <li>
+                    @if (book.BookNumInSeries != null && book.BookNumInSeries != 0)
+                    {
+                        <span>@book.BookNumInSeries — </span>
+                    }
+                    <a asp-page="/Book" asp-route-id="@book.BookId">
+                        @book.Name
+                    </a>
+                    // <a asp-page="/Author" asp-route-id="@Model.Series.AuthorsId">
+                        @Model.Series.Authors.FullName
+                    </a>
+                </li>
+            }
+        </ul>
+    </li>
+</ul>
+
+<hr style="margin:20px 20px 6px 20px"/>
+
+<div class="container" style="margin:40px">
+    <div class="row justify-content-start">
+        @foreach (var book in Model.Series.Books)
+        {
+            <div class="col-auto">
+                <div class="text-sm-center">
+                    <a asp-page="/Book" class="darken-on-hover" asp-route-id="@book.BookId" style="text-decoration: none">
+                        <img style="height:300px; width:200px; border-radius:14px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                        <h5>@book.Name</h5>
+                        <h6 class="text-muted">@book.Authors.FullName</h6>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+

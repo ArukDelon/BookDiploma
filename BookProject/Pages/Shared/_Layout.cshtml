@@ -1,0 +1,190 @@
+﻿@using BookProject.Services
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookStream</title>
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BookProject.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/png" href="~/book-stack-64.ico" sizes="64x64">
+</head>
+<body>
+    <header>
+           <div class="container">
+            <nav style="padding-top:20px;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark bg-transparent mb-3">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">BookStream</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Книги
+                                </a>
+                                <div class="dropdown-menu" style="width:540px; font-size:14px" aria-labelledby="navbarDropdown">
+                                    <div class="container container-sm">
+                                        <div class="row">
+                                            <div class="col">
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Сучасна література">Сучасна література</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Класична література">Класична література</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Пригоди">Пригоди</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Біографія">Біографія</a>
+                                            </div>
+                                            <div class="col">
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Фантастика">Фантастика</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Наукова фантастика">Наукова фантастика</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Фентезі">Фентезі</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Містика">Містика</a>
+                                            </div>
+                                            <div class="col">
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Детектив">Детектив</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Триллер">Триллер</a>
+                                            <a class="dropdown-item" asp-page="/Category" asp-route-cName="Жахи">Жахи</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <li class="nav-item text-light" style="margin-right:10px">
+                            <a class="nav-link text-light" asp-area="" asp-page="/Authors">Автори</a>
+                        </li>
+                        <li class="nav-item w-75">
+                            <form class="d-flex" method="get" asp-page="/AdvancedSearch">
+                                <input class="form-control me-2" type="search" placeholder="Пошук" aria-label="Search" name="searchString">
+                                <button class="btn btn-outline-success text-light" type="submit">Пошук</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                    
+                </div>
+               
+            </nav>
+
+            </div>
+        <hr style="margin-left:50px; margin-right:50px;" />
+    </header>
+
+    @if (User.IsInRole("admin"))
+    {
+        <div class="fullside sidebar-container">
+            <div class="sidebar-logo">
+                ПАНЕЛЬ АДМІНІСТРАТОРА
+            </div>
+            <ul class="sidebar-navigation">
+                <li class="header">Навігація</li>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-home" aria-hidden="true"></i> Головна
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                    </a>
+                </li>
+                <li class="header">Таблиці</li>
+                <li>
+                    <a href="/AuthorsMaster">
+                        <i class="fa fa-pen-nib" aria-hidden="true"></i> Автори
+                    </a>
+                </li>
+                <li>
+                    <a href="/BookMaster">
+                        <i class="fa fa-book" aria-hidden="true"></i> Книги
+                    </a>
+                </li>
+                <li>
+                    <a href="/CategoryMaster">
+                        <i class="fa fa-icons" aria-hidden="true"></i> Жанри
+                    </a>
+                </li>
+                <li>
+                    <a href="/SeriesMaster">
+                        <i class="fa fa-list-ol" aria-hidden="true"></i> Серії книг
+                    </a>
+                </li>
+                <li>
+                    <a href="/TagMaster">
+                        <i class="fa fa-tag" aria-hidden="true"></i> Теги
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="minside sidebar-container" style="width:80px; height:410px">
+            <div class="sidebar-logo">
+                AP
+            </div>
+            <ul class="sidebar-navigation">
+                <li class="header">NAV</li>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="header">TAB</li>
+                <li>
+                    <a href="/AuthorsMaster">
+                        <i class="fa fa-pen-nib" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/BookMaster">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/CategoryMaster">
+                        <i class="fa fa-icons" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/SeriesMaster">
+                        <i class="fa fa-list-ol" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/TagMaster">
+                        <i class="fa fa-tag" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    }
+    
+    <div class="container" style="padding-left:2%;padding-right:2%">
+        <div>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div  class="container">
+            &copy; 2024 - BookProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+  

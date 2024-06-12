@@ -1,0 +1,61 @@
+﻿@page
+@model BookProject.Pages.TagMaster.IndexModel
+
+@{
+    ViewData["Title"] = "Теги";
+}
+
+<h1 class="fw-bold">Теги</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create"><i class="fa-solid fa-plus"></i> Додати новий</a> |
+    <a class="btn btn-secondary" asp-page="/Admin"><i class="fa-solid fa-arrow-left"></i> Дашборд</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tag[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tag[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tag) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+                <td width="200px">
+                    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
+                    <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.Tag.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Tag.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Tag.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Назад
+</a>
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Tag.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Далі
+</a>

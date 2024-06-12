@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BookProject.Models.AppUser" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAACAAAAAAAAAAAAACAAAAAAAAIAg=</HashCode>
+      <FileName>Models\AppUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Authors">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCADAAAAAAAgAIAAAAQAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Authors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Book">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAICBAASQAgXgAAAARBAAQACABAAAQgAAAAAoAAKAA=</HashCode>
+      <FileName>Models\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.BookGrade" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAAAABAAAAEAAIAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\BookGrade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.BookSeries" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAiABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BookSeries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.BookTag" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\BookTag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.CartItem" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\CartItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.ShoppingCart">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAACAAAAAAAAAEAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Models\CartItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Category">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAAAgAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Comment">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAAAABAAAAFAAIAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Comment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Log">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAgAgBAAABEAAIQCABAEAAgAAAAAAAACAE=</HashCode>
+      <FileName>Models\Log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.LoginHistory">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAACAAAAAAAAAAACAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LoginHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Payment">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAEEAAAAAAAEAAKAQAAAAAAAIAAAABAAAAA=</HashCode>
+      <FileName>Models\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.PaymentItem" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAQAAAABAAIAAAAAAAAAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\PaymentItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Purchase">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADCAAAAAAAAABAAIAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Purchase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Models.Tag" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgEAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Services.ApplicationDbContext">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="BookProject.Services.ApplicationDbContext.TagUsage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Services\ApplicationDbContext.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="BookProject.Services.ApplicationDbContext.WeeklyLoginCount" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Services\ApplicationDbContext.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="BookProject.Services.ApplicationDbContext.CategoryView" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Services\ApplicationDbContext.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAgAEARIAAgEAAADACAAEAAEAAAQAIAQAAIIEAAAEA=</HashCode>
+      <FileName>Services\ApplicationDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Services.CartService">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Services\CartService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookProject.Services.Logger">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Services\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

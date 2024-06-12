@@ -1,0 +1,212 @@
+﻿@page
+@model BookProject.Pages.AdminModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+
+<div class="row">
+    <div class="col">
+        <h3 style="border-left: 5px solid #2574A9;padding-left:10px">
+            Кількість авторизацій <strong>(за тиждень)</strong></h3>
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="col">
+        <h3 style="border-left: 5px solid #2574A9;padding-left:10px">
+            Найбільш використані теги</h3>
+        <canvas id="tagChart"></canvas>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h3 style="border-left: 5px solid #2574A9;padding-left:10px">
+            Перегляди по жанрам</h3>
+        <canvas id="catChart"></canvas>
+    </div>
+    <div class="col">
+        <h3 style="border-left: 5px solid #2574A9;padding-left:10px">
+            Журнал подій
+        </h3>
+        <div class="log-container">
+            <ul class="log-list">
+                @foreach (var log in Model.Logs)
+                {
+                    <li class="log-item">
+                        <div class="log-date">@log.ActionDate.ToString("dd.MM.yyyy HH:mm")</div>
+                        <div class="log-type">@log.ActionType</div>
+                        <div class="log-description">@log.Description</div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var weeklyLoginCounts = @Html.Raw(Json.Serialize(Model.GetWeeklyLoginCounts()));
+    const ctx = document.getElementById('myChart');
+    var labels = weeklyLoginCounts.map(function (item) {
+        return new Date(item.loginDate).toLocaleDateString();
+    });
+
+    // Масив даних для графіка (кількість авторизацій)
+    var data = weeklyLoginCounts.map(function (item) {
+        return item.loginCount;
+    });
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels, // мітки (дати)
+            datasets: [{
+                label: 'Авторизацій',
+                data: data, // дані (кількість авторизацій)
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    var tagUsages = @Html.Raw(Json.Serialize(Model.GetTagUsages()));
+    const tctx = document.getElementById('tagChart');
+    var tlabels = tagUsages.map(function (item) {
+        return item.tagName;
+    });
+
+    // Масив даних для графіка (кількість авторизацій)
+    var tdata = tagUsages.map(function (item) {
+        return item.usageCount;
+    });
+
+
+    new Chart(tctx, {
+        type: 'bar',
+        data: {
+            labels: tlabels, 
+            datasets: [{
+                label: 'Використань',
+                data: tdata,
+                borderWidth: 1,
+                borderColor: '#a8323c',
+                backgroundColor: '#a8323c',
+            }]
+
+        },
+        options: {
+            indexAxis: 'y',
+            elements: {
+                bar: {
+                    borderWidth: 2,
+                }
+            },
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right',
+                },
+            }
+        },
+    });
+
+    var catViews = @Html.Raw(Json.Serialize(Model.GetCategoryViews()));
+    const cctx = document.getElementById('catChart');
+    var clabels = catViews.map(function (item) {
+        return item.categoryName;
+    });
+
+    // Масив даних для графіка (кількість авторизацій)
+    var cdata = catViews.map(function (item) {
+        return item.viewCount;
+    });
+
+
+    new Chart(cctx, {
+        type: 'pie',
+        data: {
+            labels: clabels,
+            datasets: [{
+                data: cdata,
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(153, 102, 255)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 0, 0)',
+                    'rgb(0, 255, 0)',
+                    'rgb(0, 0, 255)',
+                    'rgb(128, 128, 128)'
+                ],
+                hoverOffset: 4
+            }],
+        },
+    });
+</script>
+
+<style>
+    .log-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: transparent;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+        .log-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+    .log-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .log-item {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-left: 5px solid #007bff;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+        .log-item .log-date {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .log-item .log-type {
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        .log-item .log-description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .log-item:hover {
+            background-color: #f1f1f1;
+        }
+</style>

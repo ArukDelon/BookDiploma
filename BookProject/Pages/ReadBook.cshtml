@@ -1,0 +1,133 @@
+﻿@page
+@model BookProject.Pages.ReadBookModel
+@{
+    ViewData["Title"] = "Reading";
+    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("uk-UA");
+}
+
+<a class="btn btn-secondary" asp-page="/Book" style="margin-bottom:20px" asp-route-id="@Model.Book.BookId"><i class="fa-solid fa-arrow-left"></i> Вернутись до опису</a>
+
+<div class="pagination justify-content-center" style="margin-bottom:20px">
+    @if (Model.Pages.Count > 0)
+    {
+        @foreach (var pageNumber in Model.Pages)
+        {
+            var parms = new Dictionary<string, string>
+    {
+    { "id", Model.Book.BookId.ToString() },
+    { "pageNumber", (Model.CurrentPage - 1).ToString() }
+    };
+            if (pageNumber == 1 && Model.CurrentPage > 1)
+            {
+                <a style="margin-left:10px; margin-right:10px" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            }
+
+            parms = new Dictionary<string, string>
+    {
+    { "id", Model.Book.BookId.ToString() },
+    { "pageNumber", pageNumber.ToString() }
+    };
+
+            @if (pageNumber == Model.TotalPages - 1 && Model.TotalPages > 9 && Model.CurrentPage < Model.TotalPages - 3) // Додайте три крапки після третьої кнопки
+            {
+                <span>...</span>
+            }
+
+            @if (pageNumber == Model.CurrentPage)
+            {
+                <a style="margin-left:10px; margin-right:10px; font-weight:bolder" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">@pageNumber</a>
+            }
+            else
+            {
+                <a style="margin-left:10px; margin-right:10px" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">@pageNumber</a>
+            }
+
+
+            @if (pageNumber == 2 && Model.CurrentPage > 4) // Додайте три крапки після третьої кнопки
+            {
+                <span>...</span>
+            }
+
+            parms = new Dictionary<string, string>
+    {
+    { "id", Model.Book.BookId.ToString() },
+    { "pageNumber", (Model.CurrentPage + 1).ToString() }
+    };
+            if (pageNumber == Model.TotalPages && Model.CurrentPage < Model.TotalPages)
+            {
+                <a style="margin-left:10px; margin-right:10px" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            }
+        }
+    }
+</div>
+
+<pre class="bookbody" style="white-space: pre-wrap;font-family: Aсademy; font-size:20px">@Model.BookContent</pre>
+
+<div class="pagination justify-content-center">
+    @if (Model.Pages.Count > 0)
+    {
+        @foreach (var pageNumber in Model.Pages)
+        {
+            var parms = new Dictionary<string, string>
+    {
+    { "id", Model.Book.BookId.ToString() },
+    { "pageNumber", (Model.CurrentPage - 1).ToString() }
+    };
+            if(pageNumber == 1 && Model.CurrentPage > 1)
+            {
+                <a style="margin-left:10px; margin-right:10px" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            }
+
+            parms = new Dictionary<string, string>
+    {
+    { "id", Model.Book.BookId.ToString() },
+    { "pageNumber", pageNumber.ToString() }
+    };
+
+            @if (pageNumber == Model.TotalPages - 1 && Model.TotalPages > 9 && Model.CurrentPage < Model.TotalPages - 3) // Додайте три крапки після третьої кнопки
+            {
+                <span>...</span>
+            }
+
+            @if (pageNumber == Model.CurrentPage)
+            {
+                <a style="margin-left:10px; margin-right:10px; font-weight:bolder" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">@pageNumber</a>
+            }
+            else
+            {
+                <a style="margin-left:10px; margin-right:10px" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">@pageNumber</a> 
+            }
+
+
+            @if (pageNumber == 2 && Model.CurrentPage > 4) // Додайте три крапки після третьої кнопки
+            {
+                <span>...</span>
+            }
+
+            parms = new Dictionary<string, string>
+    {
+    { "id", Model.Book.BookId.ToString() },
+    { "pageNumber", (Model.CurrentPage + 1).ToString() }
+    };
+            if (pageNumber == Model.TotalPages && Model.CurrentPage < Model.TotalPages)
+            {
+                <a style="margin-left:10px; margin-right:10px" class="btn btn-outline-dark" asp-page="/ReadBook" asp-all-route-data="parms">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            }
+        }
+    }
+</div>
+
+
+
+
+
+
+

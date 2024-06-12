@@ -1,0 +1,54 @@
+﻿@page
+@model BookProject.Pages.AuthorsMaster.DetailsModel
+
+@{
+    ViewData["Title"] = "Деталі";
+}
+
+<h1>Деталі</h1>
+
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Authors.FullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Authors.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Authors.FullNameEnglish)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Authors.FullNameEnglish)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Authors.BirthDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Authors.BirthDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Authors.BirthPlace)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Authors.BirthPlace)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Authors.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Authors.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Authors.AvatarPath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Authors.AvatarPath)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.Authors.Id"><i class="fa-solid fa-pen-to-square"></i> Редагувати</a> |
+    <a class="btn btn-secondary" asp-page="./Index"><i class="fa-solid fa-arrow-left"></i> Назад</a>
+</div>

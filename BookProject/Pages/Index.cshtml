@@ -1,0 +1,227 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Book Stream";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Вітаємо в Book Stream</h1>
+    <p>Ваша база для книжкових пригод та насолоди читанням онлайн.</p>
+
+    <div class="mt-4">
+        <a href="/AdvancedSearch" class="btn btn-primary btn-lg">Переглянути Книги</a>
+        <a href="/about" class="btn btn-secondary btn-lg">Дізнатися більше про нас</a>
+    </div>
+
+    <div class="row" style="margin-top:40px; margin-bottom:20px">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                @foreach (var book in Model.Books)
+                {
+                    <div class="swiper-slide">
+                        <a asp-page="/Book" asp-route-id="@book.BookId" style="text-decoration: none">
+                            <img style="border-radius:14px; object-fit:cover;" src="@book.AvatarPath" alt="Зображення" />
+                            <h5>@book.Name</h5>
+                            <h6 class="text-muted">@book.Authors.FullName</h6>
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    
+
+    <div class="row image-text-row mt-5 hidden" id="book-section">
+        <div class="col-md-6">
+            <img src="~/images/Archive_1.png" class="img-fluid rounded" alt="Книги">
+        </div>
+        <div class="col-md-6 text-content">
+            <h2>Більше 1000 книг в нашій базі даних</h2>
+            <p>Ми пропонуємо широкий вибір книг різних жанрів та авторів. Незалежно від ваших вподобань, ви знайдете щось цікаве для себе. Починайте свою літературну подорож з нами сьогодні!</p>
+        </div>
+    </div>
+
+    <div class="row equal-height-row mt-5">
+        <div class="col-md-8 image-text-hover">
+            <img src="~/images/books_1.jpg" class="img-fluid rounded equal-height" alt="Читання 1">
+            <div class="text-overlay" style="margin-bottom:50px">
+                <h2 class="myDiv" style="font-weight:bold">Читай онлайн</h2>
+                <a href="#" class="details-link">Детальніше</a>
+            </div>
+        </div>
+        <div class="col-md-4 image-text-hover">
+            <img src="~/images/Kobzar.png" class="img-fluid rounded equal-height" alt="Читання 2">
+            <div class="text-overlay" style="margin-bottom:50px">
+                <h2>Вивчай українську культуру</h2>
+                <a href="/RidnaMova" class="details-link">Детальніше</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .equal-height {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .row.equal-height-row {
+        display: flex;
+    }
+
+        .row.equal-height-row .col-md-8,
+        .row.equal-height-row .col-md-auto {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .row.equal-height-row img {
+            flex-grow: 1;
+        }
+
+    .image-text-row {
+        display: flex;
+        align-items: center;
+    }
+
+        .image-text-row img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .image-text-row .text-content {
+            max-width: 600px;
+        }
+
+    .image-text-hover {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+        .image-text-hover img {
+            width: 100%;
+            height: auto;
+            transition: filter 0.3s ease;
+        }
+
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+        text-shadow: 4px -4px 1px black;
+    }
+
+        .text-overlay .details-link {
+            display: none;
+            margin-top: 10px;
+            color: #ffc107;
+            font-weight: bold;
+            text-shadow: none;
+        }
+
+    .image-text-hover:hover img {
+        filter: blur(3px);
+    }
+
+    .image-text-hover:hover .text-overlay {
+        transform: translateY(-20px);
+    }
+
+        .image-text-hover:hover .text-overlay .details-link {
+            display: inline-block;
+        }
+
+    .hidden {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    .visible {
+        opacity: 1;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: rgba(255, 255, 255, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        entry.target.classList.remove("hidden");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const section = document.getElementById("book-section");
+            observer.observe(section);
+        });
+
+
+    </script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
